@@ -1,78 +1,46 @@
-// This is a JavaScript file
-let somar = document.getElementById("somar");
+var textoDisplay="";
+var valor1 = 0;
+var valor2 = 0;
+var operador ="";
 
-let subtrair = document.getElementById("subtrair");
+$(document).on("click",".botao",function(){
+    textoDisplay += $(this).val();
+    $(".display").val(textoDisplay);
+})
+ $(document).on("click","opera", function(){
+     operador = $(this).html();
+     valor1 = textoDisplay;
+     textoDisplay ="";
+     $(".display").val("");
+ })
+  $(document).on("click","#ce", function(){
+      textoDisplay = "";
+      $(".display").val("");
+      valor1 = 0;
+      
+  })
+ $(document).on("click","#igual", function(){
+     var valor2 = textoDisplay;
+     textoDisplay = "";
+     $(".display").val("");
+    
 
-let dividir = document.getElementById("dividir");
+     if (operador == "-"){
+         textoDisplay = parseFloat(valor1)-parseFloat(valor2)
+     }
 
+     if (operador == "+"){
+         textoDisplay = parseFloat(valor1)+parseFloat(valor2)
+     }
 
-let valor1 = document.getElementById("valor1");
+     if (operador == "x"){
+         textoDisplay = parseFloat(valor1)*parseFloat(valor2)
+     }
 
-let valor2 = document.getElementById("valor2");
+     if (operador == "/"){
+         textoDisplay = parseFloat(valor1)/parseFloat(valor2)
+     }
+        $(".display").val(textoDisplay);
+     })
 
-somar.addEventListener("click", function(){
- let resultado = parseInt(valor1.value) + parseInt(valor2.value);
-
-      document.getElementById("resultado").value = resultado;
-    mudarCor(resultado);
-
-    document.getElementById("usoma").textContent = resultado;
-
-    document.getElementById("somaanterior").innerHTML += "<p  class='itemsoma'>" + resultado + "</p>";
-
-    let itemsoma = document.getElementsByClassName("itemsoma");
-
-  
-   
-
-
- });
-subtrair.addEventListener("click", function(){
- let resultado = parseInt(valor1.value) - parseInt(valor2.value);
-
-      document.getElementById("resultado").value = resultado;
-    mudarCor(resultado);
-
-    document.getElementById("usub").textContent = resultado;
-
-    document.getElementById("subanterior").innerHTML += "<p  class='itemsubtrair'>" + resultado + "</p>";
-
-    let itemsub = document.getElementsByClassName("itemsub");
-});
-dividir.addEventListener("click", function(){
- let resultado = parseInt(valor1.value) / parseInt(valor2.value);
-
-      document.getElementById("resultado").value = resultado;
-    mudarCor(resultado);
-
-    document.getElementById("udiv").textContent = resultado;
-
-    document.getElementById("subanterior").innerHTML += "<p  class='itemdividir'>" + resultado + "</p>";
-
-    let itemdiv = document.getElementsByClassName("itemdiv");
-});
-
- multiplicar.addEventListener("click", function(){
- let resultado = parseInt(valor1.value) * parseInt(valor2.value);
-
-      document.getElementById("resultado").value = resultado;
-    mudarCor(resultado);
-
-    document.getElementById("umulti").textContent = resultado;
-
-    document.getElementById("subanterior").innerHTML += "<p  class='itemmultiplicar'>" + resultado + "</p>";
-
-    let itemmulti = document.getElementsByClassName("itemmulti");
-});
  
-  
-
-
-
-function mudarCor(result){
-    if (result < 0) {
-        document.getElementById("resultado").style.color = "#F00";
-    } else {
-        document.getElementById("resultado").style.color = "#ff0058";
-    } 
-} 
