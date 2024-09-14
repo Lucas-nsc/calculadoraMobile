@@ -8,7 +8,7 @@
 
 .container h1 {
     text-align: center;
-    color: blue;
+    color: rgb(0, 0, 78);
 }
 
 .container label{
@@ -22,7 +22,7 @@
        width: 300px;
         display: block;
         margin: 10px 10%;
-        background: rgba(255, 255, 255, 0.703);
+        background: rgba(150, 70, 75.703);
         color: rgb(19, 239, 11);
         font-size: 20px;
     }
@@ -40,13 +40,17 @@
         margin: 5px;
         height: 40px;
         margin-left: 208px;
-       width: 50px; 
+        width: 50px; 
+        background-color: rgb(128, 11, 0);
     }
     #botao{
         width: 50px;
+        background-color: darkcyan;
+        border-radius: 15px;
+        border-color: darkred;
     }
     #igual{
-        background-color: green;
+        background-color: rgb(128, 11, 0);
         width: 50px;
 
     }
@@ -69,7 +73,7 @@
     }
     .container-a{
         width: 300px;
-        background-color: aqua;
+        background-color: rgb(131, 151, 17);
        
   }
   
@@ -82,4 +86,9 @@
   .input{
         width: 100px;
         border-radius: 10px;
+  }
+  .opera{
+  border-radius: 15px;
+  background-color: deepskyblue;
+  border-color: gold;
   }
