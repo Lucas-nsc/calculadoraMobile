@@ -1,13 +1,12 @@
 var textoDisplay="";
 var valor1 = 0;
-var valor2 = 0;
 var operador ="";
 
 $(document).on("click",".botao",function(){
     textoDisplay += $(this).val();
     $(".display").val(textoDisplay);
 })
- $(document).on("click","opera", function(){
+ $(document).on("click",".opera", function(){
      operador = $(this).html();
      valor1 = textoDisplay;
      textoDisplay ="";
